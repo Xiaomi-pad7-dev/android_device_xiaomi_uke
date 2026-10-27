@@ -1,0 +1,17 @@
+# Bluetooth
+bluetooth.device.class_of_device=90,2,12
+bluetooth.hfp.codec_aptx_voice.enabled=true
+bluetooth.leaudio.dual_bidirection_swb.supported=false
+bluetooth.profile.pbap.sim.enabled=true
+bluetooth.profile.sap.server.enabled=true
+persist.bluetooth.leaudio_offload.disabled=true
+persist.bluetooth.leaudio.allow.multiple.context=false
+persist.bluetooth.leaudio.bypass_allow_list=true
+persist.bluetooth.leaudio.notify.idle.during.call=true
+ro.bluetooth.leaudio_offload.supported=false
+
+# DPM
+persist.vendor.dpm.feature=11
+
+# WFD
+vendor.wfdservice64=enable

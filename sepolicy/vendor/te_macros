@@ -1,0 +1,5 @@
+define(`vendor_hal_attribute', `
+attribute vendor_hal_$1;
+attribute vendor_hal_$1_client;
+attribute vendor_hal_$1_server;
+')

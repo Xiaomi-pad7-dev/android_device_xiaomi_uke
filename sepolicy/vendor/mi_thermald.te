@@ -1,0 +1,20 @@
+type mi_thermald, domain, mlstrustedsubject;
+type mi_thermald_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(mi_thermald)
+
+allow mi_thermald self:capability { fowner chown };
+allow mi_thermald thermal_data_file:dir rw_dir_perms;
+allow mi_thermald thermal_data_file:file create_file_perms;
+
+r_dir_file(mi_thermald, sysfs_leds)
+r_dir_file(mi_thermald, vendor_sysfs_displayfeature)
+r_dir_file(mi_thermald, vendor_sysfs_graphics)
+rw_dir_file(mi_thermald, sysfs)
+rw_dir_file(mi_thermald, sysfs_power_save)
+rw_dir_file(mi_thermald, sysfs_thermal)
+rw_dir_file(mi_thermald, sys_thermal_wifi_limit)
+rw_dir_file(mi_thermald, vendor_sysfs_battery_supply)
+rw_dir_file(mi_thermald, vendor_sysfs_qcom_battery)
+set_prop(mi_thermald, vendor_thermal_normal_prop)
+

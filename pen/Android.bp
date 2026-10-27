@@ -1,0 +1,19 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "xiaomi-pen",
+    vendor: true,
+    srcs: ["xiaomi-pen.cpp"],
+    cflags: ["-Wall", "-Werror"],
+}
+
+cc_binary {
+    name: "xiaomi-focus-pen-filter",
+    vendor: true,
+    srcs: ["xiaomi-focus-pen-filter.c"],
+    cflags: ["-Wall", "-Werror"],
+}
+

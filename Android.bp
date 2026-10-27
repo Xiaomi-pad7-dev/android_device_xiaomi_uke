@@ -1,0 +1,74 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+    imports: [
+        "hardware/xiaomi",
+    ],
+}
+
+install_symlink {
+    name: "firmware_wlanmdsp.otaupdate_symlink",
+    vendor: true,
+    installed_location: "firmware/wlanmdsp.otaupdate",
+    symlink_target: "/data/vendor/firmware/wlanmdsp.mbn",
+}
+
+install_symlink {
+    name: "firmware_wlan_mac.kiwi_v2.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/kiwi_v2/wlan_mac.bin",
+    symlink_target: "/mnt/vendor/persist/wlan_mac.bin",
+}
+
+install_symlink {
+    name: "firmware_wlan_mac.qca6750.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/qca6750/wlan_mac.bin",
+    symlink_target: "/mnt/vendor/persist/wlan_mac.bin",
+}
+
+install_symlink {
+    name: "firmware_WCNSS_qcom_cfg.kiwi_v2.ini_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/kiwi_v2/WCNSS_qcom_cfg.ini",
+    symlink_target: "/vendor/etc/wifi/kiwi_v2/WCNSS_qcom_cfg.ini",
+}
+
+install_symlink {
+    name: "firmware_WCNSS_qcom_cfg.qca6750.ini_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini",
+    symlink_target: "/vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini",
+}
+
+install_symlink {
+    name: "rfs_msm_mpss_readonly_mbnconfig_symlink",
+    vendor: true,
+    installed_location: "rfs/msm/mpss/readonly/mbnconfig",
+    symlink_target: "/data/vendor/mbnconfig",
+}
+
+install_symlink {
+    name: "libclang_rt.ubsan_standalone.so_symlink",
+    vendor: true,
+    installed_location: "lib64/libclang_rt.ubsan_standalone.so",
+    symlink_target: "/vendor/lib64/libclang_rt.ubsan_standalone-aarch64-android.so",
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_intentaware_interface",
+    interfaces: [
+        "vendor.xiaomi.hardware.intentaware@1.0::IIntentAwareService",
+    ],
+}
+
+install_symlink {
+    name: "android.hardware.bluetooth.audio-impl-qti.so_symlink",
+    vendor: true,
+    installed_location: "lib64/android.hardware.bluetooth.audio-impl-qti.so",
+    symlink_target: "/vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so",
+}

@@ -1,0 +1,11 @@
+vendor_hal_attribute(camerapostproc_xiaomi)
+
+vendor_hal_attribute(displayfeature_xiaomi)
+
+hal_attribute(aidl_dms)
+
+hal_attribute(mediaeventgatherservice)
+
+vendor_hal_attribute(citsensorservice_xiaomi)
+
+hal_attribute(touchfeature_xiaomi)

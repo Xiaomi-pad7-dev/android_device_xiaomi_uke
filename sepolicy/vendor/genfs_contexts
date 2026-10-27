@@ -1,0 +1,19 @@
+
+genfscon sysfs /module/camera/parameters/cam_cci_io_protect    u:object_r:vendor_sysfs_camera:s0
+genfscon sysfs /module/camera/parameters/ife_mqs_node1         u:object_r:vendor_sysfs_camera:s0
+
+genfscon sysfs /devices/virtual/keyboard/keypad/keyboard_status_param    u:object_r:sysfs_keyboard_status:s0
+
+genfscon proc /perflock_records    u:object_r:vendor_proc_perflock_records:s0
+
+genfscon proc /tp_fw_version                                           u:object_r:proc_tp_file:s0
+genfscon proc /tp_lockdown_info                                        u:object_r:proc_tp_lockdown:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/abnormal_event         u:object_r:sysfs_touch_hostprocess:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/touch_finger_status    u:object_r:sysfs_touch_hostprocess:s0
+
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a80000.i2c/i2c-2/2-000e/wakeup                                                                                              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a8c000.i2c/i2c-5/5-004c/wakeup                                                                                              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_0_geni_se/a90000.spi/spi_master/spi1/spi1.0/wakeup                                                                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300:pwrkey-bark/wakeup          u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c42d000.qcom,spmi/spmi-0/0-00/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300/c42d000.qcom,spmi:qcom,pmk8550@0:pon_hlos@1300:pwrkey-resin-bark/wakeup    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/8c0000.qcom,qupv3_1_geni_se/890000.i2c/i2c-7/7-0057/wakeup                                                                                              u:object_r:sysfs_wakeup:s0

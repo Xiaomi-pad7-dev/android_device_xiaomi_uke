@@ -1,0 +1,61 @@
+# USB functions (adb, mtp, rndis/ncm tethering) are owned by the QTI gadget
+# HAL. Set this at init so init.qcom.usb.rc's "on boot && use_gadget_hal=1"
+# branch (which puts configfs in HAL mode, 2) actually runs before anything
+# else touches the gadget.
+on init
+    setprop sys.usb.configfs 2
+    setprop vendor.usb.use_gadget_hal 1
+    setprop vendor.usb.controller a600000.dwc3
+
+on property:ro.boot.usbcontroller=*
+    setprop sys.usb.controller ${ro.boot.usbcontroller}
+
+on post-fs-data
+    chown system system /sys/class/mi_display/disp-DSI-0/wp_info
+    chmod 0444 /sys/class/mi_display/disp-DSI-0/wp_info
+    chown system system /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chmod 0664 /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chown system system /sys/class/mi_display/disp-DSI-0/max_brightness_clone
+    chmod 0664 /sys/class/mi_display/disp-DSI-0/max_brightness_clone
+    chown system system /sys/class/mi_display/disp-DSI-1/wp_info
+    chmod 0444 /sys/class/mi_display/disp-DSI-1/wp_info
+    chown system system /sys/class/mi_display/disp-DSI-1/brightness_clone
+    chmod 0664 /sys/class/mi_display/disp-DSI-1/brightness_clone
+    chown system system /sys/class/mi_display/disp-DSI-1/max_brightness_clone
+    chmod 0664 /sys/class/mi_display/disp-DSI-1/max_brightness_clone
+    chown system system /sys/class/backlight/panel2-backlight/brightness
+    chown system system /sys/class/backlight/panel2-backlight/max_brightness
+    chown system system /sys/class/backlight/panel3-backlight/brightness
+    chown system system /sys/class/backlight/panel3-backlight/max_brightness
+    chown system system /sys/class/backlight/DP1-backlight/brightness
+    chown system system /sys/class/backlight/DP1-backlight/max_brightness
+    chown system system /sys/class/backlight/DP2-backlight/brightness
+    chown system system /sys/class/backlight/DP2-backlight/max_brightness
+
+
+
+service vendor.xiaomi_pen /vendor/bin/xiaomi-pen ${persist.vendor.parts.pen} ${persist.vendor.parts.pen.val}
+    class main
+    user root
+    group system input
+    oneshot
+    disabled
+
+on property:persist.vendor.parts.pen=*
+    start vendor.xiaomi_pen
+
+service vendor.focus-pen-filter /vendor/bin/xiaomi-focus-pen-filter
+    class late_start
+    user root
+    group root system input uhid
+    disabled
+
+on property:sys.boot_completed=1
+    start vendor.focus-pen-filter
+
+# Toggle the Novatek pen digitizer mode
+on property:sys.pen.active=1
+    write /sys/class/touch/touch_dev/pen_connect_strategy 1
+
+on property:sys.pen.active=0
+    write /sys/class/touch/touch_dev/pen_connect_strategy 0

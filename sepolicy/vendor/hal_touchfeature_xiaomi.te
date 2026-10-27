@@ -1,0 +1,29 @@
+binder_use(hal_touchfeature_xiaomi)
+
+type hal_touchfeature_xiaomi_default_exec, file_type, exec_type, vendor_file_type;
+init_daemon_domain(hal_touchfeature_xiaomi_default)
+
+hal_server_domain(hal_touchfeature_xiaomi_default, hal_touchfeature_xiaomi)
+
+# The service type is declared in public policy now (stylus_app looks it up),
+# so the registration rules that hal_attribute_service() used to emit have to
+# be explicit.
+allow hal_touchfeature_xiaomi_server hal_touchfeature_xiaomi_service:service_manager { add find };
+
+
+allow hal_touchfeature_xiaomi_default init:unix_stream_socket connectto;
+allow hal_touchfeature_xiaomi_default tpevent:unix_stream_socket connectto;
+allow hal_touchfeature_xiaomi_default input_device:chr_file rw_file_perms;
+allow hal_touchfeature_xiaomi_default input_device:dir r_dir_perms;
+allow hal_touchfeature_xiaomi_default proc_tp_file:file { read write open };
+allow hal_touchfeature_xiaomi_default property_socket:sock_file write;
+allow hal_touchfeature_xiaomi_default self:capability sys_nice;
+allow hal_touchfeature_xiaomi_default sysfs_touch_hostprocess:file rw_file_perms;
+allow hal_touchfeature_xiaomi_default touchfeature_device:chr_file rw_file_perms;
+allow hal_touchfeature_xiaomi_default touchfeature_device:file r_file_perms;
+allow hal_touchfeature_xiaomi_default fwk_sensor_hwservice:hwservice_manager find;
+
+
+binder_call(hal_touchfeature_xiaomi_default, system_server)
+
+set_prop(hal_touchfeature_xiaomi_default, vendor_touch_hostprocess_prop)
