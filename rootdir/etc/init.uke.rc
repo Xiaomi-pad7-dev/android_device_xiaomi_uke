@@ -34,28 +34,6 @@ on post-fs-data
 
 
 
-service vendor.xiaomi_pen /vendor/bin/xiaomi-pen ${persist.vendor.parts.pen} ${persist.vendor.parts.pen.val}
-    class main
-    user root
-    group system input
-    oneshot
-    disabled
-
-on property:persist.vendor.parts.pen=*
-    start vendor.xiaomi_pen
-
-service vendor.focus-pen-filter /vendor/bin/xiaomi-focus-pen-filter
-    class late_start
-    user root
-    group root system input uhid
-    disabled
 
 on property:sys.boot_completed=1
-    start vendor.focus-pen-filter
 
-# Toggle the Novatek pen digitizer mode
-on property:sys.pen.active=1
-    write /sys/class/touch/touch_dev/pen_connect_strategy 1
-
-on property:sys.pen.active=0
-    write /sys/class/touch/touch_dev/pen_connect_strategy 0

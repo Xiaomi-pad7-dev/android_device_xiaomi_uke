@@ -10,8 +10,3 @@ system.algo.aivs.debug    u:object_r:exported_system_prop:s0
 persist.sys.multi_display_type    u:object_r:exported_system_prop:s0
 
 # Pen
-persist.pen.events.disabled            u:object_r:system_pen_prop:s0
-sys.pen.active                         u:object_r:system_pen_prop:s0
-persist.vendor.parts.pen               u:object_r:system_pen_prop:s0
-persist.vendor.parts.pen.val           u:object_r:system_pen_prop:s0
-persist.pen.min_activation_pressure    u:object_r:system_pen_prop:s0

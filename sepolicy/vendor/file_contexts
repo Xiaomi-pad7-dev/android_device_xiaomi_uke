@@ -59,5 +59,3 @@
 /dev/0:0:0:[0-9]                              u:object_r:vendor_ufs_lun4_bsg_device:s0
 
 # Pen
-/vendor/bin/xiaomi-pen               u:object_r:xiaomi_pen_exec:s0
-/vendor/bin/xiaomi-focus-pen-filter  u:object_r:vendor_focus_pen_filter_exec:s0

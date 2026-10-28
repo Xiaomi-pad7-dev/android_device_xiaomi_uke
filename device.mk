@@ -343,8 +343,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyboard/NVTCapacitivePenP81c-merged.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c-merged.idc
 
 
-# Pen (Xiaomi Focus Pen / Focus Pen Pro)
+# Stylus
 PRODUCT_PACKAGES += \
-    XiaomiPen \
-    xiaomi-pen \
-    xiaomi-focus-pen-filter
+    XiaomiStylus

@@ -1,1 +1,1 @@
-user=_app isPrivApp=true seinfo=platform name=org.lineageos.pen domain=pen_app type=app_data_file levelFrom=user
+user=system seinfo=platform isPrivApp=true name=org.pixelos.stylus domain=stylus_app type=system_app_data_file levelFrom=all

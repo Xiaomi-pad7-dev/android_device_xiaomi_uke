@@ -79,6 +79,7 @@ BOARD_BOOTCONFIG := \
     pcie_ports=compat \
     irqaffinity=0-2 \
     sysctl.kernel.sched_pelt_multiplier=4 \
+    cpufreq.default_governor=performance \
     kasan=off \
     cgroup.memory=nokmem,nosocket \
     disable_dma32=on \
