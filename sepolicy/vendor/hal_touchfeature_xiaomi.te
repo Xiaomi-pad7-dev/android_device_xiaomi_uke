@@ -28,4 +28,3 @@ binder_call(hal_touchfeature_xiaomi_default, system_server)
 
 set_prop(hal_touchfeature_xiaomi_default, vendor_touch_hostprocess_prop)
 
-allow hal_touchfeature_xiaomi_default stylus_app:binder call;
