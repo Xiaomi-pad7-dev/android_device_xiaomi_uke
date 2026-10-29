@@ -1,0 +1,9 @@
+# Copyright (C) 2026 The LineageOS Project
+#
+# Key layout file for Xiaomi Focus Pen (Bluetooth HID)
+
+# Lower / Writing Button
+key 104   STYLUS_BUTTON_PRIMARY
+
+# Upper / Screenshot Button
+key 109   STYLUS_BUTTON_SECONDARY

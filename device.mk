@@ -337,10 +337,15 @@ $(call inherit-product, vendor/xiaomi/uke/uke-vendor.mk)
 $(call inherit-product, $(DEVICE_PATH)/vendor_libs.mk)
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keyboard/NVTCapacitiveTouchScreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitiveTouchScreen.idc \
+    $(LOCAL_PATH)/keyboard/NVTCapacitiveTouchScreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/NVTCapacitiveTouchScreen.kl \
     $(LOCAL_PATH)/keyboard/NVTCapacitivePenM80p.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenM80p.idc \
     $(LOCAL_PATH)/keyboard/NVTCapacitivePenM80p-merged.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenM80p-merged.idc \
     $(LOCAL_PATH)/keyboard/NVTCapacitivePenP81c.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c.idc \
-    $(LOCAL_PATH)/keyboard/NVTCapacitivePenP81c-merged.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c-merged.idc
+    $(LOCAL_PATH)/keyboard/NVTCapacitivePenP81c-merged.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c-merged.idc \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_5081.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_5081.kl \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_5080.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_5080.kl \
+    $(LOCAL_PATH)/keyboard/Xiaomi_Focus_Pen_Pro.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Xiaomi_Focus_Pen_Pro.kl
 
 
 # Stylus
