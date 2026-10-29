@@ -59,3 +59,4 @@
 /dev/0:0:0:[0-9]                              u:object_r:vendor_ufs_lun4_bsg_device:s0
 
 # Pen
+/dev/hidraw[0-9]*                  u:object_r:hidraw_device:s0
