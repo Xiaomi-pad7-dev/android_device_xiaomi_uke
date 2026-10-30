@@ -1,0 +1,70 @@
+# Copyright (C) 2025 The LineageOS Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Xiaomi Focus Pen Pro - HID keyboard interface
+#   bus 0x0005 (Bluetooth), vendor 0x0022, product 0x5081
+#
+# The pen exposes its gestures as ordinary key usages on its keyboard
+# collection. Verified against stock HyperOS 3 (uke, OS3.0.303.0.WOZMIXN)
+# by replaying each scan code through /dev/input/event18 and reading the
+# key code Android actually delivered:
+#
+#   gesture        scanCode  stock Generic.kl   delivered to apps
+#   pinch            189     F19                194  KEYCODE_BUTTON_7
+#   double press      96     NUMPAD_ENTER       195  KEYCODE_BUTTON_8
+#   swipe up          73     NUMPAD_9           196  KEYCODE_BUTTON_9
+#   swipe down        81     NUMPAD_3           197  KEYCODE_BUTTON_10
+#
+# Stock does this remap inside its own input stack. Reproducing it here is
+# what lets drawing apps such as ONYX StarNote tell the gestures apart:
+# pinch and double press arrive as two different button codes, and because
+# BUTTON_7..10 carry no character (see the matching .kcm) nothing is typed
+# into the canvas either.
+#
+# Every other scan code keeps the exact Generic.kl behaviour, so nothing
+# else about this device changes.
+
+# --- pen gestures -> gamepad button range (stock parity) ---
+key 189   BUTTON_7
+key 96    BUTTON_8
+key 73    BUTTON_9
+key 81    BUTTON_10
+
+# --- everything else: identical to Generic.kl ---
+key 55    NUMPAD_MULTIPLY
+key 69    NUM_LOCK
+key 71    NUMPAD_7
+key 72    NUMPAD_8
+key 74    NUMPAD_SUBTRACT
+key 75    NUMPAD_4
+key 76    NUMPAD_5
+key 77    NUMPAD_6
+key 78    NUMPAD_ADD
+key 79    NUMPAD_1
+key 80    NUMPAD_2
+key 82    NUMPAD_0
+key 83    NUMPAD_DOT
+key 86    BACKSLASH
+key 98    NUMPAD_DIVIDE
+key 103   DPAD_UP
+key 104   PAGE_UP
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 107   MOVE_END
+key 108   DPAD_DOWN
+key 109   PAGE_DOWN
+key 111   FORWARD_DEL
+key 116   POWER
+key 117   NUMPAD_EQUALS
+key 127   MENU
+key 183   F13
+key 184   F14
+key 185   F15
+key 186   F16
+key 187   F17
+key 188   F18

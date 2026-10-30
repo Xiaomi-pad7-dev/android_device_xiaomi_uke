@@ -416,6 +416,18 @@ final class PenMipp {
         }
     }
 
+    /**
+     * Haptic feedback for a recognised gesture.
+     *
+     * Stock HyperOS 3 writes 5e 02 03 80 to the MIPP command characteristic on
+     * a double press (measured on uke: a pinch never triggers it, a double
+     * press always does, ~5 ms after the key). The pen has no motion of its
+     * own, so the buzz is driven from the host rather than by the pen.
+     */
+    void sendGestureHaptic() {
+        send(new byte[] { 0x5e, 0x02, 0x03, (byte) 0x80 });
+    }
+
     private void send(byte[] value) {
         send(value, 0);
     }
