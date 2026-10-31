@@ -1,0 +1,19 @@
+//
+// SPDX-FileCopyrightText: 2026 Yet Another AOSP Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app_import {
+    name: "XiaomiTouchService",
+    apk: "TouchService.apk",
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+
+    // The APK ships classes2.dex holding the MIUI stubs the service resolves
+    // reflectively (miui.os.HyperOSCustFeatureResolve, miui.os.Build,
+    // miui.hardware.input.MiuiInputManager). Keep the dex as-is.
+    dex_preopt: {
+        enabled: false,
+    },
+}

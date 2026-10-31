@@ -34,6 +34,15 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# Xiaomi PencilEngine (ported from stock HyperOS): the framework jar plus the
+# privileged TouchService that binds it. Together with the stylus app they give
+# StarNote/Mi Canvas the squeeze + swipe gestures they gate on these artifacts.
+PRODUCT_PACKAGES += \
+    XiaomiTouchService
+
+PRODUCT_COPY_FILES += \
+    device/xiaomi/uke/prebuilts/xiaomi-pencilengine/xiaomi-pencilengine-pad.jar:$(TARGET_COPY_OUT_SYSTEM_EXT)/framework/xiaomi-pencilengine-pad.jar
+
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.1-impl \
