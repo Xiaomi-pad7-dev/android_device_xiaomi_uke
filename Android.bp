@@ -72,3 +72,10 @@ install_symlink {
     installed_location: "lib64/android.hardware.bluetooth.audio-impl-qti.so",
     symlink_target: "/vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so",
 }
+
+install_symlink {
+    name: "android.hardware.bluetooth.audio-impl.so_symlink",
+    vendor: true,
+    installed_location: "lib64/android.hardware.bluetooth.audio-impl.so",
+    symlink_target: "/vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so",
+}

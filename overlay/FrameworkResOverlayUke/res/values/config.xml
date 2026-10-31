@@ -26,10 +26,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Flag indicating if the device supports Bluetooth A2DP offload. -->
-    <bool name="config_bluetooth_a2dp_offload_supported">true</bool>
+    <bool name="config_bluetooth_a2dp_offload_supported">false</bool>
 
     <!-- Flag indicating if the Bluetooth A2DP offload should be disabled by default. -->
-    <bool name="config_bluetooth_a2dp_offload_disabled_by_default">false</bool>
+    <bool name="config_bluetooth_a2dp_offload_disabled_by_default">true</bool>
 
     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
     <integer-array name="config_availableColorModes">
