@@ -95,10 +95,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/resourcemanager_cliffs_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/resourcemanager_cliffs_mtp.xml \
-    vendor/xiaomi/uke/proprietary/odm/etc/acdbdata/Forte/Forte_acdb_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/cliffs_mtp/Forte_acdb_cal.acdb \
-    vendor/xiaomi/uke/proprietary/odm/etc/acdbdata/Forte/Forte_workspaceFileXml.qwsp:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/cliffs_mtp/Forte_workspaceFileXml.qwsp \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_cliffs_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/mixer_paths_cliffs_mtp.xml \
+    vendor/xiaomi/uke/proprietary/odm/etc/acdbdata/Forte/Forte_acdb_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/cliffs_mtp/MTP_cliffs_acdb_cal.acdb \
+    vendor/xiaomi/uke/proprietary/odm/etc/acdbdata/Forte/Forte_workspaceFileXml.qwsp:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/cliffs_mtp/MTP_cliffs_workspaceFileXml.qwsp \
     vendor/xiaomi/uke/proprietary/odm/etc/audio/sku_cliffs/adsp_sleep_monitor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/adsp_sleep_monitor.conf \
-    vendor/xiaomi/uke/proprietary/odm/etc/audio/sku_cliffs/mixer_paths_cliffs_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/mixer_paths_cliffs_mtp.xml \
     vendor/xiaomi/uke/proprietary/odm/etc/audio/sku_cliffs/mixer_paths_overlay_dynamic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/mixer_paths_overlay_dynamic.xml \
     vendor/xiaomi/uke/proprietary/odm/etc/audio/sku_cliffs/mixer_paths_overlay_static.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/mixer_paths_overlay_static.xml
 
