@@ -1,6 +1,5 @@
 # Audio
 persist.vendor.audio.cinema.support=true
-persist.vendor.audio.effectimplenter=dolby
 persist.vendor.audio.induce_crash_generic=false
 persist.vendor.audio.induce_crash=false
 persist.vendor.audio.spatializer.enable=false
@@ -11,7 +10,6 @@ ro.vendor.audio.bt.adapter=15
 ro.vendor.audio.btsamplerate.adaptive=true
 ro.vendor.audio.camera.loopback.support=false
 ro.vendor.audio.custom.interface.support=true
-ro.vendor.audio.dolby.spatial.profile=dynamic
 ro.vendor.audio.fluence.rx.supported.devices=15
 ro.vendor.audio.forte.focus.view=true
 ro.vendor.audio.record.customized.support=true
@@ -109,10 +107,6 @@ vendor.display.enable_hist_intr=1
 vendor.display.force_tonemapping=1
 vendor.display.idle_time=35
 vendor.display.use_layer_ext=0
-
-# Dolby
-persist.vendor.dolby.enable.c2fence=0
-ro.vendor.dolby.dap_bypassed_on_tiny_volume=false
 
 # Media
 debug.config.media.video.ace.support=true
