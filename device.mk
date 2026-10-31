@@ -34,6 +34,15 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# Xiaomi PencilEngine (ported from stock HyperOS): the framework jar plus the
+# privileged TouchService that binds it. Together with the stylus app they give
+# StarNote/Mi Canvas the squeeze + swipe gestures they gate on these artifacts.
+PRODUCT_PACKAGES += \
+    XiaomiTouchService
+
+PRODUCT_COPY_FILES += \
+    device/xiaomi/uke/prebuilts/xiaomi-pencilengine/xiaomi-pencilengine-pad.jar:$(TARGET_COPY_OUT_SYSTEM_EXT)/framework/xiaomi-pencilengine-pad.jar
+
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.1-impl \
@@ -344,6 +353,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keyboard/NVTCapacitivePenP81c.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c.idc \
     $(LOCAL_PATH)/keyboard/NVTCapacitivePenP81c-merged.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitivePenP81c-merged.idc \
     $(LOCAL_PATH)/keyboard/Vendor_0022_Product_5081.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_5081.kl \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_5081.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_5081.kcm \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_4d80.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_4d80.kl \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_4d80.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_4d80.kcm \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_4d81.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_4d81.kl \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_4d81.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_4d81.kcm \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_3280.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_3280.kl \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_3280.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_3280.kcm \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_3281.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_3281.kl \
+    $(LOCAL_PATH)/keyboard/Vendor_0022_Product_3281.kcm:$(TARGET_COPY_OUT_VENDOR)/usr/keychars/Vendor_0022_Product_3281.kcm \
     $(LOCAL_PATH)/keyboard/Vendor_0022_Product_5080.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0022_Product_5080.kl \
     $(LOCAL_PATH)/keyboard/Xiaomi_Focus_Pen_Pro.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Xiaomi_Focus_Pen_Pro.kl
 

@@ -1,0 +1,14 @@
+--- a/device/qcom/sepolicy_vndr/sm8650/generic/vendor/common/file_contexts
++++ b/device/qcom/sepolicy_vndr/sm8650/generic/vendor/common/file_contexts
+@@ -186,7 +186,10 @@
+ /dev/mem_buf_vm/qcom,cp_cdsp			u:object_r:vendor_vm_cp_cdsp_device:s0
+ /dev/mem_buf_vm/qcom,cp_app			u:object_r:vendor_vm_cp_app_device:s0
+ # Raw HID Device
+-/dev/hidraw[0-9]*                  u:object_r:vendor_hidraw_device:s0
++# /dev/hidraw[0-9]* is labelled hidraw_device by device/xiaomi/uke so the
++# stylus app (system_ext domain) can read the Xiaomi Focus Pen reports.
++# Qualcomm's vendor_hidraw_device label for the same path conflicted at build
++# time (duplicate specification) and nothing on uke uses it, so it is removed.
+ 
+ # files in /vendor
+ /vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0

@@ -1,0 +1,33 @@
+# Copyright (C) 2025 The LineageOS Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Xiaomi Focus Pen Pro keyboard character map.
+#
+# The four pen gestures are mapped to the gamepad button range in the
+# matching .kl file so that apps can distinguish them. This map keeps those
+# buttons character-less, exactly like the stock HyperOS file
+# (/system_ext/usr/keychars/Vendor_0022_Product_5081.kcm), so no digits or
+# newlines ever land in a text field while gesturing.
+
+type FULL
+
+key BUTTON_7 {
+    base:                               none
+}
+
+key BUTTON_8 {
+    base:                               none
+}
+
+key BUTTON_9 {
+    base:                               none
+}
+
+key BUTTON_10 {
+    base:                               none
+}
