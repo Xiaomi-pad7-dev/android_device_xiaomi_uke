@@ -1,0 +1,27 @@
+type xiaomi_keyboard, domain;
+type xiaomi_keyboard_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(xiaomi_keyboard)
+binder_use(xiaomi_keyboard)
+vndbinder_use(xiaomi_keyboard)
+
+binder_call(xiaomi_keyboard, hal_midevauth_default)
+
+allow xiaomi_keyboard device:dir { write add_name remove_name };
+allow xiaomi_keyboard device:fifo_file { create open read write unlink };
+allow xiaomi_keyboard hal_midevauth_service:service_manager find;
+allow xiaomi_keyboard input_device:chr_file rw_file_perms;
+allow xiaomi_keyboard input_device:dir r_dir_perms;
+allow xiaomi_keyboard nanodev_device:chr_file rw_file_perms;
+allow xiaomi_keyboard random_device:chr_file r_file_perms;
+allow xiaomi_keyboard sysfs_hid:dir r_dir_perms;
+allow xiaomi_keyboard sysfs_hid:file rw_file_perms;
+allow xiaomi_keyboard sysfs_nanodev:dir r_dir_perms;
+allow xiaomi_keyboard sysfs_nanodev:file rw_file_perms;
+allow xiaomi_keyboard sysfs_nanodev:lnk_file read;
+allow xiaomi_keyboard vendor_file:file rx_file_perms;
+allow xiaomi_keyboard { vendor_shell_exec vendor_toolbox_exec xiaomi_keyboard_exec }:file rx_file_perms;
+allow xiaomi_keyboard vndbinder_device:chr_file rw_file_perms;
+
+get_prop(xiaomi_keyboard, boot_status_prop)
+set_prop(xiaomi_keyboard, vendor_devauth_prop)

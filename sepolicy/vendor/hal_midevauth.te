@@ -1,0 +1,14 @@
+type hal_midevauth_default, domain;
+type hal_midevauth_default_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_midevauth_default)
+binder_use(hal_midevauth_default)
+
+add_service(hal_midevauth_default, hal_midevauth_service)
+
+binder_call(hal_midevauth_default, xiaomi_keyboard)
+
+allow hal_midevauth_default ion_device:chr_file rw_file_perms;
+allow hal_midevauth_default tee_device:chr_file rw_file_perms;
+
+get_prop(hal_midevauth_default, vendor_devauth_prop)

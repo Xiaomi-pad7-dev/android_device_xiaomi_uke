@@ -1,0 +1,2 @@
+user=system seinfo=platform isPrivApp=true name=org.lineageos.pen domain=pen_app type=system_app_data_file levelFrom=all
+user=system seinfo=platform name=org.xiaomi.uke.thermal domain=thermal_profiles_app type=system_app_data_file levelFrom=all

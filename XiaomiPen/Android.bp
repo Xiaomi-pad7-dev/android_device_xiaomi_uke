@@ -1,0 +1,36 @@
+//
+// SPDX-FileCopyrightText: 2025-2026 The LineageOS Project
+// SPDX-FileCopyrightText: 2026 Yet Another AOSP Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "XiaomiPen",
+
+    srcs: ["src/**/*.java"],
+
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+    system_ext_specific: true,
+    privapp_allowlist: "privapp-permissions-org.lineageos.pen.xml",
+
+    static_libs: [
+        "vendor.xiaomi.hw.touchfeature-V1-java",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+    required: [
+        "default-permissions_org.lineageos.pen",
+    ],
+}
+
+prebuilt_etc {
+    name: "default-permissions_org.lineageos.pen",
+    system_ext_specific: true,
+    src: "default-permissions_org.lineageos.pen.xml",
+    sub_dir: "default-permissions",
+    filename_from_src: true,
+}

@@ -1,0 +1,11 @@
+#
+# Copyright (C) 2025 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+service vendor.light-default /vendor/bin/hw/android.hardware.lights-service.xiaomi
+    class hal
+    user system
+    group system
+    shutdown critical

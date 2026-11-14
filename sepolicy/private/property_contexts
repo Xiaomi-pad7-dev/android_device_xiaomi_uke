@@ -1,0 +1,8 @@
+# Exported to vendor
+persist.sys.multi_display_type    u:object_r:exported_system_prop:s0
+ro.chipname                       u:object_r:exported_system_prop:s0
+ro.mediatek.platform              u:object_r:exported_system_prop:s0
+ro.miui.region                    u:object_r:exported_system_prop:s0
+ro.product.locale.language        u:object_r:exported_system_prop:s0
+ro.product.locale.region          u:object_r:exported_system_prop:s0
+system.algo.aivs.debug            u:object_r:exported_system_prop:s0

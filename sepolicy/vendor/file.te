@@ -1,0 +1,17 @@
+type camera_persist_file, file_type, mlstrustedobject, vendor_persist_type;
+type proc_tp_file, fs_type, proc_type;
+type proc_tp_lockdown, fs_type, proc_type;
+type proc_walt, fs_type, proc_type;
+type sys_thermal_wifi_limit, fs_type, sysfs_type;
+type sysfs_hid, fs_type, sysfs_type;
+type sysfs_keyboard_status, fs_type, sysfs_type;
+type sysfs_nanodev, fs_type, sysfs_type;
+type sysfs_power_save, fs_type, sysfs_type;
+type sysfs_touch_hostprocess, fs_type, sysfs_type;
+type thermal_data_file, data_file_type, file_type;
+type vendor_data_touchreport_file, data_file_type, file_type;
+type vendor_proc_perflock_records, fs_type, proc_type;
+type vendor_sysfs_displayfeature, fs_type, sysfs_type;
+type vendor_sysfs_qcom_battery, fs_type, sysfs_type;
+type vendor_sysfs_ssr_coredump_toggle, fs_type, sysfs_type;
+type vendor_sysfs_usb_c, fs_type, sysfs_type;

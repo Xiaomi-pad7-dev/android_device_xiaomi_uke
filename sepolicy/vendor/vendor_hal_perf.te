@@ -1,0 +1,11 @@
+allow vendor_hal_perf_default hal_graphics_composer_default:file r_file_perms;
+allow vendor_hal_perf_default proc_walt:file rw_file_perms;
+allow vendor_hal_perf_default sysfs_thermal:file write;
+allow vendor_hal_perf_default thermal_data_file:dir watch;
+allow vendor_hal_perf_default vendor_proc_perflock_records:file rw_file_perms;
+
+r_dir_file(vendor_hal_perf_default, hal_audio_default)
+r_dir_file(vendor_hal_perf_default, hal_camera_default)
+r_dir_file(vendor_hal_perf_default, mediacodec)
+r_dir_file(vendor_hal_perf_default, proc_walt)
+r_dir_file(vendor_hal_perf_default, thermal_data_file)
