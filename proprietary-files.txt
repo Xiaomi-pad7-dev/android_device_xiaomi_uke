@@ -1646,7 +1646,6 @@ odm/etc/dolby_vision.cfg
 # DPM
 system_ext/bin/dpmd
 system_ext/bin/tcmd
-system_ext/etc/seccomp_policy/tcmd.policy
 system_ext/etc/dpm/dpm.conf
 system_ext/etc/init/dpmd.rc
 system_ext/etc/init/tcmd.rc
