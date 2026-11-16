@@ -376,8 +376,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.qti \
-    XiaomiThermalProfiles
+    android.hardware.thermal-service.qti
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
