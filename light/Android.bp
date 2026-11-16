@@ -12,7 +12,6 @@ cc_binary {
     vendor: true,
     shared_libs: [
         "libbase",
-        "libhardware",
         "libbinder_ndk",
         "android.hardware.light-V2-ndk",
     ],
