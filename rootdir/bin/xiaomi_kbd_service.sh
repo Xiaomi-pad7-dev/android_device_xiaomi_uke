@@ -5,11 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Connection-aware Xiaomi keyboard handling for Xiaomi Pad 7 (uke).
-#
-# Binds the virtual HID when keyboard reports Connected=[1] and unbinds when detached,
-# so the on-screen keyboard functions properly when detached.
-# Controls vendor.devauth.keyboard_connected to start/stop the auth daemon and LEDs.
+# Binds the keyboard's virtual HID while it is connected, and starts/stops
+# the auth daemon and LEDs through vendor.devauth.keyboard_connected.
 
 HID="0006:15D9:00A3.0001"
 DRV="/sys/bus/hid/drivers/hid-generic"

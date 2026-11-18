@@ -1,6 +1,7 @@
-# Copyright (C) 2026 The LineageOS Project
-#
-# Key layout file for Xiaomi Focus Pen (Bluetooth HID)
+# SPDX-FileCopyrightText: 2026 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# Xiaomi Focus Pen
 
 # Lower / Writing Button
 key 104   STYLUS_BUTTON_PRIMARY

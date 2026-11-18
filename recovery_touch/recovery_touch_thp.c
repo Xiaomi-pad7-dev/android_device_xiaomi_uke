@@ -3,12 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-/*
- * The NT36532 is a host-processed touch controller: the kernel driver only
- * streams raw frames and Xiaomi's THP daemon in libtouchreport turns them into
- * input events. In Android touchfeature-service runs it; recovery has no such
- * service, so run the daemon here.
- */
+/* Runs Xiaomi's touch host processing daemon, which recovery otherwise lacks. */
 
 #include <android/log.h>
 #include <dlfcn.h>
@@ -19,10 +14,7 @@
 #define LOG_TAG "recovery_touch_thp"
 #define LOG(prio, ...) __android_log_print(ANDROID_LOG_##prio, LOG_TAG, __VA_ARGS__)
 
-/*
- * Recovery boots with the clock at 1970 and the daemon waits for a sane time
- * before it reports touches, so start from the build date.
- */
+/* The daemon waits for a sane clock before reporting touches. */
 static void ensure_sane_clock(void) {
     char value[PROP_VALUE_MAX];
     struct timespec build = {0};

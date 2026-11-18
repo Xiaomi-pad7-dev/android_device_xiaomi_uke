@@ -12,10 +12,8 @@ import android.provider.Settings;
 import android.util.Log;
 
 /**
- * The Focus Pen only tracks the panel at 60 Hz and 120 Hz, while the panel also
- * runs at 30, 48, 50, 90 and 144 Hz. While a pen is connected and off the tablet,
- * pin the display to one of the two rates through the refresh rate settings, and
- * put the user's settings back once the pen is docked or disconnected.
+ * The Focus Pen only tracks the panel at 60 Hz and 120 Hz, so pin the refresh rate
+ * to one of those while a connected pen is off the tablet.
  */
 class PenRefreshRate {
 

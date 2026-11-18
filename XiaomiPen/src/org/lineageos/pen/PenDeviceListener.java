@@ -15,14 +15,13 @@ import android.os.Looper;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
-import java.util.function.Consumer;
 import android.view.InputDevice;
 
+import java.util.function.Consumer;
+
 /*
- * Sets up a Xiaomi pen when its input device shows up, by product ID and name:
- * - Focus Pen Pro: MIPP setup over GATT (PenMipp) and HID report forwarding (PenReports)
- * - Focus Pen: 16 step GATT initialization (PenInitializationManager)
- * The pen's input events are left alone and reach apps as they come from the kernel.
+ * Sets up a Focus Pen Pro (PenMipp, PenReports) or Focus Pen
+ * (PenInitializationManager) when its input device shows up.
  */
 final class PenDeviceListener implements InputManager.InputDeviceListener {
 
