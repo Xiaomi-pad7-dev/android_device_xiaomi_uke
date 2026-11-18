@@ -15,6 +15,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
+import java.util.function.Consumer;
 import android.view.InputDevice;
 
 /*
@@ -43,6 +44,8 @@ final class PenDeviceListener implements InputManager.InputDeviceListener {
 
     private PenInitializationManager mNormalPenInit;
 
+    private Consumer<Boolean> mConnectionListener = connected -> {};
+
     PenDeviceListener(Context context) {
         mContext = context;
         mInputManager = context.getSystemService(InputManager.class);
@@ -51,6 +54,11 @@ final class PenDeviceListener implements InputManager.InputDeviceListener {
 
         // A double press buzzes the pen, as on stock.
         mReports.setOnDoublePress(mMipp::sendGestureHaptic);
+    }
+
+    /** Called with true when the first pen connects and false when the last one goes. */
+    void setConnectionListener(Consumer<Boolean> listener) {
+        mConnectionListener = listener;
     }
 
     void onDockChanged(boolean docked) {
@@ -90,6 +98,7 @@ final class PenDeviceListener implements InputManager.InputDeviceListener {
         mPenTypes.put(deviceId, type);
 
         if (alreadyConnected) return;
+        mConnectionListener.accept(true);
         Log.i(
                 TAG,
                 "Pen "
@@ -182,6 +191,7 @@ final class PenDeviceListener implements InputManager.InputDeviceListener {
         mPens.removeAt(index);
         mPenTypes.remove(deviceId);
         if (mPens.size() > 0) return;
+        mConnectionListener.accept(false);
         Log.i(TAG, "Pen disconnected, version " + version + ", type=" + type);
         TouchFeature.setModeValue(TouchFeature.MODE_PEN_CONNECTION, version);
 

@@ -12,15 +12,23 @@ public class PenApplication extends Application {
 
     private PenDeviceListener mDeviceListener;
     private PenPairing mPairing;
+    private PenRefreshRate mRefreshRate;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
+        mRefreshRate = new PenRefreshRate(this);
+        mRefreshRate.start();
+
         mDeviceListener = new PenDeviceListener(this);
+        mDeviceListener.setConnectionListener(mRefreshRate::onConnectionChanged);
         mDeviceListener.start();
 
-        mPairing = new PenPairing(this, mDeviceListener::onDockChanged);
+        mPairing = new PenPairing(this, docked -> {
+            mDeviceListener.onDockChanged(docked);
+            mRefreshRate.onDockChanged(docked);
+        });
         mPairing.start();
     }
 }
