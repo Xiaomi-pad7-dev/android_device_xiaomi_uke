@@ -46,3 +46,16 @@ on fs
 
 on property:dev.mnt.blk.firmware=*
     write /sys/kernel/boot_adsp/boot 1
+
+on init
+    # The touch controller reports in the panel's natural orientation
+    setprop ro.minui.default_touch_rotation ROTATION_RIGHT
+
+on boot
+    start recovery_touch_thp
+
+service recovery_touch_thp /system/bin/recovery_touch_thp
+    disabled
+    user root
+    group root input system
+    seclabel u:r:recovery:s0

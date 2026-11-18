@@ -2406,6 +2406,11 @@ odm/firmware/novatek_nt36532_o82_mp_tm.bin
 odm/lib64/libtensorflowlite_touch_c.so
 odm/lib64/libtouchreport.so
 odm/lib64/libtouchsensor.so
+
+# Touchscreen host processing in recovery
+odm/lib64/libtensorflowlite_touch_c.so:recovery/system/lib64/libtensorflowlite_touch_c.so;MODULE_SUFFIX=_recovery;DISABLE_DEPS
+odm/lib64/libtouchreport.so:recovery/system/lib64/libtouchreport.so;MODULE_SUFFIX=_recovery;DISABLE_DEPS
+odm/lib64/libtouchsensor.so:recovery/system/lib64/libtouchsensor.so;MODULE_SUFFIX=_recovery;DISABLE_DEPS
 vendor/lib64/vendor.xiaomi.hw.touchfeature-V1-ndk_platform.so
 
 # Trusted Execution Environment connector

@@ -386,6 +386,19 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/uke/proprietary/odm/firmware/novatek_nt36532_o82_mp_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_nt36532_o82_mp_csot.bin \
     vendor/xiaomi/uke/proprietary/odm/firmware/novatek_nt36532_o82_mp_tm.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_nt36532_o82_mp_tm.bin
 
+# Touchscreen in recovery
+# The NT36532 has no flash, so its driver downloads the firmware at probe, and
+# Xiaomi's THP daemon turns its raw frames into touches. Recovery mounts neither
+# vendor nor odm, so ship both in its ramdisk and run the daemon there.
+PRODUCT_PACKAGES += \
+    recovery_touch_thp
+
+PRODUCT_COPY_FILES += \
+    $(foreach panel,csot tm, \
+        vendor/xiaomi/uke/proprietary/odm/firmware/novatek_nt36532_o82_fw_$(panel).bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_nt36532_o82_fw_$(panel).bin) \
+    $(foreach file,o82_nova_thp_config.ini o82_nova_tm_thp_config.ini film_model.tflite glove_model.tflite palm_check.tflite water_check.tflite, \
+        vendor/xiaomi/uke/proprietary/odm/firmware/$(file):$(TARGET_COPY_OUT_RECOVERY)/root/vendor/odm/firmware/$(file))
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
@@ -571,3 +584,9 @@ PRODUCT_COPY_FILES += \
 
 # Vendor
 $(call inherit-product, vendor/xiaomi/uke/uke-vendor.mk)
+
+# uke-arch dual boot: `bootctl` lets `adb root` switch to the Arch slot (B)
+# through the QTI boot HAL (GPT slot flags + UFS boot LUN), e.g.
+#   adb root && adb shell bootctl set-active-boot-slot 1 && adb reboot
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
