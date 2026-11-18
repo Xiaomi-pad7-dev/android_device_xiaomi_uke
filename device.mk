@@ -215,6 +215,7 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.sh \
     kbd_leds.sh \
+    xiaomi_kbd_auth \
     xiaomi_kbd_service.sh
 
 PRODUCT_COPY_FILES += \

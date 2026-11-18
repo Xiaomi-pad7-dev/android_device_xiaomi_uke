@@ -1,0 +1,21 @@
+//
+// SPDX-FileCopyrightText: 2026 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "xiaomi_kbd_auth",
+    srcs: ["xiaomi_kbd_auth.cpp"],
+    vendor: true,
+    init_rc: ["xiaomi_kbd_auth.rc"],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+        "vendor.xiaomi.hardware.aidl.midevauth-V1-ndk",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}

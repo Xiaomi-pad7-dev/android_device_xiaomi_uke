@@ -9,6 +9,7 @@ vendor.camera.sensor.                u:object_r:vendor_camera_sensor_prop:s0
 
 # DevAuth
 vendor.devauth.    u:object_r:vendor_devauth_prop:s0
+persist.vendor.sys.devauth    u:object_r:vendor_devauth_prop:s0 exact string
 
 # Panel
 vendor.panel.    u:object_r:vendor_panel_info_prop:s0

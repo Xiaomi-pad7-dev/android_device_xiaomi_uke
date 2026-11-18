@@ -1,0 +1,10 @@
+service xiaomi_kbd_auth /vendor/bin/xiaomi_kbd_auth
+    user system
+    group system
+    disabled
+
+on property:vendor.devauth.keyboard_connected=true
+    start xiaomi_kbd_auth
+
+on property:vendor.devauth.keyboard_connected=false
+    stop xiaomi_kbd_auth

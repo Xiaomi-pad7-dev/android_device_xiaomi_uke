@@ -38,6 +38,7 @@
 /dev/nanodev[0-9]*                                           u:object_r:nanodev_device:s0
 /(odm|vendor/odm)/bin/midevauthd                             u:object_r:hal_midevauth_default_exec:s0
 /(vendor|system/vendor)/bin/kbd_leds\.sh                     u:object_r:xiaomi_keyboard_exec:s0
+/(vendor|system/vendor)/bin/xiaomi_kbd_auth                  u:object_r:xiaomi_keyboard_exec:s0
 /(vendor|system/vendor)/bin/xiaomi_kbd_service\.sh           u:object_r:xiaomi_keyboard_exec:s0
 
 # Light
