@@ -68,7 +68,6 @@
 /(odm|vendor)/etc/init\.panel_info\.sh                       u:object_r:vendor_touch_init_shell_exec:s0
 /(odm|vendor/odm)/bin/hw/vendor\.xiaomi\.hw\.touchfeature-service    u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 /(odm|vendor/odm)/bin/touch_report_debug                     u:object_r:tp_report_debug_exec:s0
-/(odm|vendor/odm)/bin/toucheventcheck                        u:object_r:tpevent_exec:s0
 
 # Wi-Fi
 /data/vendor/wlan_logs(/.*)?                                 u:object_r:vendor_wifi_vendor_data_file:s0
