@@ -1,0 +1,7 @@
+bluetooth.device.default_name=POCO Pad X1
+ro.product.brand_for_attestation=POCO
+ro.product.model_for_attestation=25099RP08G
+ro.product.odm.brand=POCO
+ro.product.odm.model=25099RP08G
+ro.product.odm.name=uke_p_global
+vendor.usb.product_string=POCO Pad X1

@@ -328,6 +328,11 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(DEVICE_PATH)/power:libpowermode-ext-xiaomi)
 
+# Properties
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/props/odm_ukein.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_ukein.prop \
+    $(DEVICE_PATH)/props/odm_ukepgl.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_ukepgl.prop
+
 # QSPA
 PRODUCT_PACKAGES += \
     vendor.qti.qspa-service
