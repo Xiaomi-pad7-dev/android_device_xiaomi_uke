@@ -80,4 +80,4 @@ subsystem mi_display
 /dev/iorap_dev 0660 system system
 
 # Xiaomi magnetic keyboard nanodev
-/dev/nanodev*             0666   root       system
+/dev/nanodev*             0660   root       system
